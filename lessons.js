@@ -94,3 +94,125 @@ const LESSONS = RAW.split("\n").map((row, index) => {
   const [title, idea, guided, challenge, question, correct, wrong] = row.split("|");
   return { day: index + 1, week: Math.floor(index / 7) + 1, title, idea, guided, challenge, question, correct, wrong };
 });
+
+const VIDEOS = [
+  { title: "2D vs 3D shapes for kids", id: "qiQDKBlpC2g", creator: "KIDZOKI" },
+  { title: "Tinkercad for beginners", id: "gOs6Mdj7y_4", creator: "Skills Factory" },
+  { title: "Group, hole and align in Tinkercad", id: "hbQww7pWGt4", creator: "Tinkercad Tutorial" },
+  { title: "Design a pencil holder", id: "4hgfl5E3eig", creator: "Tinkercad tutorial" },
+  { title: "The Engineering Design Process: An Eggstronaut Mission", id: "fuwGvZ-eOrc", creator: "Science Buddies" },
+  { title: "Design a working hinge", id: "bOY0LQlNKrc", creator: "Tinkercad tutorial" },
+  { title: "The Engineering Design Process: An Eggstronaut Mission", id: "fuwGvZ-eOrc", creator: "Science Buddies" },
+  { title: "How 3D printing works", id: "YopnifbUFPE", creator: "Paisley's Corner" },
+  { title: "From model to 3D print", id: "9qRnjoADexI", creator: "Tinkercad tutorial" },
+  { title: "The Engineering Design Process: An Eggstronaut Mission", id: "fuwGvZ-eOrc", creator: "Science Buddies" },
+  { title: "Cardboard prototyping", id: "UtQTIZSf8Mo", creator: "Tested" },
+  { title: "Tinkercad for beginners: review your skills", id: "gOs6Mdj7y_4", creator: "Skills Factory" }
+];
+
+const WEEK_COACHING = [
+  "Draw the same object from the front, side and top. A flat view hides one direction, so compare your sketches before building.",
+  "In Tinkercad, use the ViewCube to look around your model. Drag a shape from Basic Shapes, then click it to reveal its handles.",
+  "Select two shapes before using Align or Group. Turn a shape into Hole first, then group it with a solid to subtract material.",
+  "Make the object at a useful size. Write its width, depth and height in millimeters, then compare those numbers with the real item.",
+  "Begin with a person and a need. Ask what feels awkward, watch what actually happens, and sketch more than one possible fix.",
+  "Draw every moving piece separately. Mark its direction of travel and leave a little space where pieces meet.",
+  "Pick one question for a test. Keep the test conditions the same before and after your change so the comparison is fair.",
+  "Think about the first layer touching the print bed. Check for loose pieces, thin walls and parts hanging in the air.",
+  "Compare materials and shapes against the job. A product that is strong, comfortable, repairable and economical is easier to keep using.",
+  "Use a design brief as your map: who needs this, what must it do, and how will you measure whether it works?",
+  "Build the largest body first, then add one functional detail at a time. Test size and fit with paper before polishing the appearance.",
+  "Show your evidence: early sketch, first prototype, test result and revision. Explain what you learned in your own words."
+];
+
+const DAILY_COACHING = `Turn a paper square into a box by folding four sides; the new depth is what makes it solid.|Can you point to width, height and depth on your box?
+Stand at a table: move a pencil left-right, toward-away and up-down. Those are X, Y and Z.|Can you name all three directions without looking?
+Sketch a mug as a cylinder plus a curved handle. Decide which parts are separate solids.|Can another person recognize your object from the solids?
+Place a toy on paper and trace its top shadow. Then draw its front outline; compare what each view hides.|Do your three drawings show the same object?
+Measure the same eraser twice in millimeters. If numbers differ, hold the ruler at zero and try again.|Can your drawn container fit the measured eraser?
+Make one notebook page you would understand next month: title, labels, sizes and a question.|Could someone else build from your notes?
+Put pencils into your cardboard organizer. If it tips, widen the base before decorating it.|Does your second version work better than the first?
+Use the ViewCube to switch between top and front, then orbit freely to see a hidden side.|Can you return to the top view on purpose?
+Move one shape only along the workplane. Lift another and notice that its shadow stays below it.|Can you explain position versus height?
+Type 40, 30 and 20 into a box's size fields. Compare the result with a ruler on paper.|Do all three numbers match your plan?
+Lift a sphere until it touches a box without floating. Check from a side view for a gap.|Does the sphere rest on the box?
+Rotate a roof by exactly a quarter-turn. A quarter of 360 degrees is 90 degrees.|Does the roof face the direction you intended?
+Duplicate one wheel and keep the copies equal. Place each wheel at the same height.|Do all four wheels line up?
+Build a platform, slide and stairs with simple solids. Name the file so you can find it again.|Can a visitor point to the safe way up and down?
+Align three posts by their centers. Undo and try aligning by their lower edges to see the difference.|Can you say which alignment you chose?
+Group a box and roof, move them together, then ungroup and move only the roof.|Can you explain when to group and ungroup?
+Center a smaller hole box inside a solid box. Group them and look into the open center.|Is the tray actually hollow?
+Push a cylinder hole fully through a block. If it stops inside, the tunnel will have a closed end.|Can you see through your tunnel?
+Use the ruler to set two posts exactly 30 mm apart. Record where you measured from.|Can you reproduce the spacing?
+Draw a center line before copying the second half. Check that both halves are equally far from it.|Do both sides match in size and position?
+Check the stand's slot against the cardboard phone, then make the base broad enough to resist tipping.|Does the phone fit and stay upright?
+Write the brief in one sentence. A nameplate is successful only if its owner can read it easily.|Can you name the user and the need?
+View the nameplate from where someone sits. Letters that look fine from above may be hidden.|Can you read it from normal desk height?
+Measure a real pencil and draw its circle. Leave room around it so it can go in and out.|Can three pencils enter without forcing them?
+Keep the ring hole away from the tag's outer edge. Imagine the weak strip breaking if it is too thin.|Can you see a strong border around the hole?
+Make a paper cable stand-in. Move it through the keeper's channel to look for a slipping point.|Does the cable stay where you wanted?
+Draw a thick outer outline and a smaller inner outline. The material between them is the cutter wall.|Are there any tiny fragile corners?
+Test the chosen object with the thing it is meant to hold. Ask for one specific improvement.|Can you explain your change using feedback?
+Ask permission before watching someone work. Note what they do, not what you think they should do.|Did you record one easy and one hard step?
+Compare “Is this good?” with “What is hard about this?” The second gives a designer a clue.|Did your follow-up reveal a new detail?
+Draw boxes and arrows for packing a bag. Circle the step where searching or reaching takes time.|Can you name the exact frustrating step?
+Set a timer and keep the pencil moving. Wild ideas count because they may inspire a practical feature.|Did you sketch eight different ideas?
+Score each idea against the same three criteria. A total is a guide, not a replacement for thought.|Can you explain your winning idea?
+Wrap paper around a pretend handle and hold it. If fingers squeeze painfully, make the grip broader.|Can another person hold it comfortably?
+Let the user try the book holder without instructions. Notice where they pause or adjust it.|Did one observation lead to a change?
+Draw two leaves and a pin for a hinge. Mark the line that stays still while the leaf rotates.|Can you identify the rotation axis?
+Fold tape over a cardboard flap to create a hinge. Leave the bend line free to move.|Does the lid open without tearing?
+Put a dot at each cardboard wheel's center before making the axle opening.|Do the wheels turn without wobbling badly?
+Slide a paper tab in a channel. If it jams, widen the channel slightly rather than forcing it.|Can it move smoothly without falling out?
+Look at a snap lid: one part bends a little, then catches. Sketch where bending happens.|Can you point to the hook and release?
+Lay out two parts in the order they are assembled. Try swapping the order and note what fails.|Could a friend follow your numbered steps?
+Roll the vehicle three times from the same starting line. Record distance or straightness each time.|Did your adjustment improve a repeated test?
+Sketches are fast to change, paper shows size, and digital models show precise shape. Use all three.|Can you say what each prototype teaches?
+Write one test question on paper before building. Keep the result beside it so your answer is clear.|Did the test answer that question?
+Mark exactly where a tower bends or tips. “It failed” is less useful than “the narrow base tipped.”|Did the second tower stay up longer?
+Keep height and material equal while changing base width. Then width is the likely reason for a difference.|Can you identify the one changed variable?
+Name three versions and put one sentence beside each. A saved older version lets you undo a poor change.|Can you tell which version performed best?
+Ask “What was confusing?” and stay quiet while the user tries it. Avoid giving hints unless safety requires it.|Did you capture what they actually did?
+Put v1 and v2 beside the same test result. Explain whether the change helped, hurt or made no difference.|Can your evidence support the claim?
+Stack paper strips to imagine printed layers. Every new layer must be placed on something below or supported.|Can you point to the bottom layer?
+Orbit your model and look underneath it. A floating decoration may not join the printed part.|Is every intended piece connected?
+Place paper shapes on a table. A box has more first-layer contact than a ball.|Does your model sit on a stable flat face?
+Hold a long paper strip out from a desk edge. Notice how a longer unsupported section droops.|Can you identify the unsupported section?
+Draw two circles: one exact fit and one a little wider. Physical materials rarely match digital measurements perfectly.|Did you plan at least two trial sizes?
+After export, open the file in a viewer or slicer with an adult. Confirm that it is the intended object and size.|Does the exported shape match your model?
+Use the four-point checklist: connected, flat base, sensible size, and no unsafe details.|Could an adult follow your checklist?
+Bend paper and cardboard of the same size gently. Record which resists bending better for your intended job.|Can you justify your material choice?
+Fold a paper strip into a rib and repeat the same bridge test. Compare with the flat strip.|Did the rib improve strength?
+Draw a solid block and a hollow tray with equal outside sizes. The empty middle removes material.|Can you show what material was saved?
+Pretend to clean every inside corner with a cloth. A corner you cannot reach may collect dirt.|Can you reach all important surfaces?
+Sketch how a worn wheel could be removed and replaced. Permanent glue may make repair harder.|Can you list the replacement steps?
+Use a finger to trace safe edges on a cardboard mockup. Check tiny parts and pinch points too.|Did you remove at least one hazard?
+Compare before and after drawings side by side. Put a reason next to every changed feature.|Does each change help strength, comfort or resources?
+List annoyances in your study area, then choose one you can observe and test safely.|Can you state the problem without naming a solution?
+Turn “good holder” into “holds four pencils while standing upright.” Measurable goals are easier to test.|Are all three requirements testable?
+Look at two existing products and list one advantage and one problem for each. Borrow principles, not entire designs.|Did you notice a gap your idea can fill?
+Make three silhouettes before adding detail. Different silhouettes force different solutions.|Are your three ideas genuinely different?
+Score each concept with the same requirements, then ask whether the top score makes sense for the user.|Can you defend your choice with two reasons?
+Label body, opening, support and handle on your chosen sketch. Measure the space where it must sit.|Do your planned dimensions fit that space?
+Present the brief and sketches in under three minutes, then listen for confusing or missing details.|Did the review change your plan?
+Model the largest shape at real size first. A paper rectangle of the same dimensions helps you judge scale.|Does its footprint fit the intended place?
+For each added slot or handle, write the requirement it serves. Remove a detail that has no job.|Does each feature have a purpose?
+Hold a paper item template against your planned opening. Add a little room if it must slide in easily.|Does the item fit without forcing it?
+Build a rough cardboard body at real size. Put it in its intended location, not just on your desk.|Can the user reach and use it there?
+Give the user a simple task and observe silently. Write down pauses, slips and unexpected movements.|Did you record three neutral observations?
+Duplicate v1 before changing it. Match each v2 change to a note from the test.|Can you explain why each change was made?
+Mark each requirement pass, partial or needs work. Do not hide a weak result; it tells you what to fix.|Which requirement needs attention first?
+Sketch two fixes for the weakest result. Predict which is more likely to help before making it.|Did the repeated test improve?
+Read labels from normal use distance and touch a cardboard edge gently. Polish should improve use.|Can someone understand the product without instructions?
+Arrange four panels so a viewer can follow the story without you speaking. Use large labels and one image per panel.|Can another person retell the process?
+Practice a two-minute story: who, problem, first idea, test, change and result. Cut anything unrelated.|Did your listener understand the evidence?
+Run through your checklist with another person. Fix a missing file, label or measurement before showcase day.|Is everything ready and clearly named?
+Look at your Day 1 sketch. Name a skill you could not do then but can do now.|Can you name three specific improvements?
+Show the first and final versions together. Explain one failure and how it led to a better idea.|Can your audience see what you learned?`;
+
+DAILY_COACHING.split("\n").forEach((row, index) => {
+  const [example, success] = row.split("|");
+  LESSONS[index].example = example;
+  LESSONS[index].success = success;
+  LESSONS[index].video = VIDEOS[Math.floor(index / 7)];
+});

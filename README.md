@@ -18,6 +18,8 @@ Progress, notes, lesson completion, quiz attempts, streaks, and activity history
 
 The dashboard counts unique calendar days with lesson activity as attempted days. Missed days are past days since the first attempt without activity. The current streak continues if the last attempt was today or yesterday. Lessons can be completed in any order.
 
+Each lesson includes a related YouTube video, a worked example, a guided build, an independent challenge, a success check, and a short quiz. Videos open on YouTube in a new tab; an adult can choose how Vivan watches them. Some foundation videos recur when several lessons build on the same skill.
+
 ## Safety
 
 An adult should help with Tinkercad account setup and supervise cutting tools and any 3D printer. Paper and cardboard prototypes work for lessons that mention printing.

@@ -1,11 +1,11 @@
 # Vivan's Junior Product Designer Academy
 
-A buildless, static 84-day course website. Open `index.html` locally to preview it, or publish the four site files on GitHub Pages. No npm, server, account, or build step is required.
+A buildless, static 84-day course website. Open `index.html` locally to preview it, or publish the five site files on GitHub Pages. No npm, server, account, or build step is required.
 
 ## Publish on GitHub Pages
 
 1. Create a new public GitHub repository (for example, `vivan-academy`).
-2. Upload `index.html`, `style.css`, and `lessons.js` and `app.js` to the repository root.
+2. Upload `index.html`, `style.css`, `lessons.js`, `guides.js`, and `app.js` to the repository root.
 3. In the repository, open **Settings → Pages**.
 4. Under **Build and deployment**, choose **Deploy from a branch**. Select `main` and `/ (root)`, then save.
 5. Wait for GitHub to show the site URL, usually `https://YOUR-USERNAME.github.io/vivan-academy/`. Open it and start Day 1.
@@ -18,7 +18,7 @@ Progress, notes, lesson completion, quiz attempts, streaks, and activity history
 
 The dashboard counts unique calendar days with lesson activity as attempted days. Missed days are past days since the first attempt without activity. The current streak continues if the last attempt was today or yesterday. Lessons can be completed in any order.
 
-Each lesson includes a related YouTube video, a worked example, a guided build, an independent challenge, a success check, and a short quiz. Videos open on YouTube in a new tab; an adult can choose how Vivan watches them. Some foundation videos recur when several lessons build on the same skill.
+Each lesson now has its own materials list, setup, guided actions, test, troubleshooting hint, independent challenge, success check, and short quiz. The learner checks each completed stage, writes a specific evidence note, and answers the quiz correctly before the Finish button unlocks. These checks support reflection but cannot prove mastery by themselves. Videos open on YouTube in a new tab; an adult can choose how Vivan watches them. Some foundation videos recur when several lessons build on the same skill.
 
 ## Safety
 

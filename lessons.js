@@ -13,7 +13,7 @@ Measure before making|A size is a promise about how big something will be. Milli
 Design notebook|Designers save sketches and questions so ideas are easy to improve.|Make a notebook page with a title, three sketches, measurements and one question about a product you use.|Choose one annoying daily problem and sketch two possible fixes.|What should you record beside a product sketch?|Measurements|Only a color
 Week 1 maker challenge|A prototype is a quick model used to learn, not a perfect final product.|Build a cardboard desk organizer using a sketch, three measured parts and tape. Test it with real pencils.|Improve one part after the test and note why.|Why test a prototype?|To learn what to improve|To prove it is perfect
 Enter Tinkercad|The workplane is your digital table. You can place shapes on it and see them from different angles.|With an adult's help, open Tinkercad and try its starter lessons. Orbit, pan and zoom around an empty workplane.|Place a box and view it from top, front and side.|What is the workplane like?|A table for shapes|A paint brush
-Place and move|Drag shapes onto the workplane and move them using the colored arrows.|Place a box, cylinder and sphere. Move each to a different place and change the camera angle.|Arrange the solids into a tiny playground.|What changes when you move a shape?|Its position|Its material
+Place and move|Drag shapes onto the workplane and move selected shapes across it.|Place a box, cylinder and sphere. Move each to a different place and change the camera angle.|Arrange the solids into a tiny playground.|What changes when you move a shape?|Its position|Its material
 Resize with handles|A shape's handles change its width, depth or height.|Create a box. Set three different sizes, writing down each measurement. Undo and redo once.|Make a box exactly 40 by 30 by 20 mm.|Which handle changes how tall a box is?|Height handle|Color menu
 Lift and lower|The black cone lifts an object above the workplane; height is different from its footprint.|Lift a sphere above a box. Lower it until it rests on top. Check from the side.|Build a three-level tower that looks balanced.|Why check the side view?|To see height and gaps|To change colors
 Rotate carefully|Rotation changes direction without changing a shape's basic dimensions.|Rotate a roof shape by 90 degrees, then try a small angle. Compare from front and top.|Build a tilted sign or ramp with a rotated solid.|Does rotation change a box's width setting?|No|Yes
@@ -125,7 +125,7 @@ const WEEK_COACHING = [
   "Show your evidence: early sketch, first prototype, test result and revision. Explain what you learned in your own words."
 ];
 
-const DAILY_COACHING = `Turn a paper square into a box by folding four sides; the new depth is what makes it solid.|Can you point to width, height and depth on your box?
+const DAILY_COACHING = `Fold the edges of a paper square upward to suggest an open tray; use clay for a closed box.|Can you point to width, height and depth on your box?
 Stand at a table: move a pencil left-right, toward-away and up-down. Those are X, Y and Z.|Can you name all three directions without looking?
 Sketch a mug as a cylinder plus a curved handle. Decide which parts are separate solids.|Can another person recognize your object from the solids?
 Place a toy on paper and trace its top shadow. Then draw its front outline; compare what each view hides.|Do your three drawings show the same object?
@@ -216,3 +216,7 @@ DAILY_COACHING.split("\n").forEach((row, index) => {
   LESSONS[index].success = success;
   LESSONS[index].video = VIDEOS[Math.floor(index / 7)];
 });
+
+for (const day of [7, 57, 60, 61, 62, 63, 78, 79, 80, 81, 82, 83, 84]) {
+  LESSONS[day - 1].video = VIDEOS[4];
+}

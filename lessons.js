@@ -95,21 +95,6 @@ const LESSONS = RAW.split("\n").map((row, index) => {
   return { day: index + 1, week: Math.floor(index / 7) + 1, title, idea, guided, challenge, question, correct, wrong };
 });
 
-const VIDEOS = [
-  { title: "2D vs 3D shapes for kids", id: "qiQDKBlpC2g", creator: "KIDZOKI" },
-  { title: "Tinkercad for beginners", id: "gOs6Mdj7y_4", creator: "Skills Factory" },
-  { title: "Group, hole and align in Tinkercad", id: "hbQww7pWGt4", creator: "Tinkercad Tutorial" },
-  { title: "Design a pencil holder", id: "4hgfl5E3eig", creator: "Tinkercad tutorial" },
-  { title: "The Engineering Design Process: An Eggstronaut Mission", id: "fuwGvZ-eOrc", creator: "Science Buddies" },
-  { title: "Design a working hinge", id: "bOY0LQlNKrc", creator: "Tinkercad tutorial" },
-  { title: "The Engineering Design Process: An Eggstronaut Mission", id: "fuwGvZ-eOrc", creator: "Science Buddies" },
-  { title: "How 3D printing works", id: "YopnifbUFPE", creator: "Paisley's Corner" },
-  { title: "From model to 3D print", id: "9qRnjoADexI", creator: "Tinkercad tutorial" },
-  { title: "The Engineering Design Process: An Eggstronaut Mission", id: "fuwGvZ-eOrc", creator: "Science Buddies" },
-  { title: "Cardboard prototyping", id: "UtQTIZSf8Mo", creator: "Tested" },
-  { title: "Tinkercad for beginners: review your skills", id: "gOs6Mdj7y_4", creator: "Skills Factory" }
-];
-
 const WEEK_COACHING = [
   "Draw the same object from the front, side and top. A flat view hides one direction, so compare your sketches before building.",
   "In Tinkercad, use the ViewCube to look around your model. Drag a shape from Basic Shapes, then click it to reveal its handles.",
@@ -214,9 +199,4 @@ DAILY_COACHING.split("\n").forEach((row, index) => {
   const [example, success] = row.split("|");
   LESSONS[index].example = example;
   LESSONS[index].success = success;
-  LESSONS[index].video = VIDEOS[Math.floor(index / 7)];
 });
-
-for (const day of [7, 57, 60, 61, 62, 63, 78, 79, 80, 81, 82, 83, 84]) {
-  LESSONS[day - 1].video = VIDEOS[4];
-}
